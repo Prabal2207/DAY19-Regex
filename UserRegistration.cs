@@ -7,6 +7,8 @@ namespace UserRegistration
     {
 
         public static string Regex_FirstName = "^[A-Z][a-z]{2,}$";
+        public static string Regex_LastName = "^[A-Z][a-z]{2,}$";
+
 
         public static bool ValidateFirstName(string FirstName)
         {
@@ -19,6 +21,24 @@ namespace UserRegistration
             if (Regex.IsMatch(FirstName, Regex_FirstName) == false)
             {
                 Console.WriteLine("Enter valid First name. It should Start with capital letters and minimum 3 letters!");
+            }
+            else
+            {
+                Console.WriteLine("It is Valid!");
+            }
+        }
+
+
+        public static bool ValidateLastName(string LastName)
+        {
+            return Regex.IsMatch(LastName, Regex_LastName);
+        }
+
+        public static void checkLastName(string LastName)
+        {
+            if (Regex.IsMatch(LastName, Regex_LastName) == false)
+            {
+                Console.WriteLine("Enter valid Last name. It should Start with capital letters and minimum 3 letters!");
             }
             else
             {
