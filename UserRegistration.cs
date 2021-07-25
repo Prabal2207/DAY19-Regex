@@ -8,7 +8,7 @@ namespace UserRegistration
 
         public static string Regex_FirstName = "^[A-Z][a-z]{2,}$";
         public static string Regex_LastName = "^[A-Z][a-z]{2,}$";
-
+        public static string Regex_email = "^[A-Za-z]{1,}[@][A-Za-z0-9]{3,}[.][A-Za-z]{3,}$";
 
         public static bool ValidateFirstName(string FirstName)
         {
@@ -45,5 +45,23 @@ namespace UserRegistration
                 Console.WriteLine("It is Valid!");
             }
         }
+        public static bool Validateemail(string email)
+        {
+            return Regex.IsMatch(email, Regex_email);
+        }
+
+        public static void checkemail(string email)
+        {
+            if (Regex.IsMatch(email, Regex_email) == false)
+            {
+                Console.WriteLine("Enter valid email");
+            }
+            else
+            {
+                Console.WriteLine("It is Valid!");
+            }
+        }
+
+
     }
 }
