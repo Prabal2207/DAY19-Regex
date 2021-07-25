@@ -10,6 +10,7 @@ namespace UserRegistration
         public static string Regex_LastName = "^[A-Z][a-z]{2,}$";
         public static string Regex_email = "^[A-Za-z]{1,}[@][A-Za-z0-9]{3,}[.][A-Za-z]{3,}$";
         public static string Regex_PhoneNumber = "^([9][1])[ ][0-9]{10}$";
+        public static string Regex_Password = "[A-Za-z]{8}$";
 
         public static bool ValidateFirstName(string FirstName)
         {
@@ -73,6 +74,23 @@ namespace UserRegistration
             if (Regex.IsMatch(PhoneNumber, Regex_PhoneNumber) == false)
             {
                 Console.WriteLine("Enter valid PhoneNumber");
+            }
+            else
+            {
+                Console.WriteLine("It is Valid!");
+            }
+        }
+
+        public static bool ValidatePassword(string Password)
+        {
+            return Regex.IsMatch(Password,Regex_Password);
+        }
+
+        public static void checkPassword(string Password)
+        {
+            if (Regex.IsMatch(Password,Regex_Password) == false)
+            {
+                Console.WriteLine("Enter valid Password");
             }
             else
             {
